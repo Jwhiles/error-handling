@@ -1,8 +1,7 @@
-// rewrite this async
-
-const syncSizeChecker = (data) => {
+// The below function takes a number and throws an error if it is too small.
+const syncSizeChecker = (int) => {
   try {
-    if (data < 10) {
+    if (int < 10) {
       throw new Error('too small');
     } else {
       console.log('all fine');
@@ -13,12 +12,11 @@ const syncSizeChecker = (data) => {
   }
 }
 
-
-// please finish these functions so they can handle errors asynchronously
-const asyncSizeChecker = (data) => {
+// This function should do the same as the above, but asynchronouslyslylsously. Please rewrite it and it's callback, so they work :)
+const asyncSizeChecker = (int) => {
   try {
     setTimeout(() => {
-      if (data < 10) {
+      if (int < 10) {
         throw new Error('too small');
       } else {
         console.log('all fine');
@@ -37,7 +35,11 @@ const asyncCB = (err, data) => {
 
 
 syncSizeChecker(5);
+// you had an error:  too small
 syncSizeChecker(11);
+// all fine
 
 asyncSizeChecker(5, asyncCB);
+// you had an error:  too small
 asyncSizeChecker(11, asyncCB);
+// all fine

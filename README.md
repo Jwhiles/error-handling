@@ -16,7 +16,7 @@ Simply creating an error doesn't really do anything.
 
 Things get more interesting when we start to talk about exceptions. We can create an exception by typing `throw new Error('exceptional')`. If you add this to your javascript file, it will break. Try it. Really, try it. Now!!!
 
-If throwing an exception instantly makes our program explode, you might wonder what the point is. This leads us to the most important part of error handling - how we actually handle them.
+> Raising an exception somewhat resembles a super-charged return from a function: it jumps out of not just the current function but also out of its callers, all the way down to the first call that started the current execution... If exceptions always zoomed right down to the bottom of the stack, they would not be of much use. They would just provide a novel way to blow up your program. Their power lies in the fact that you can set “obstacles” along the stack to catch the exception as it is zooming down. Then you can do something with it, after which the program continues running at the point where the exception was caught. - Eloquent Javascript
 
 ## handling exceptions
 So how do we typically handle an exception? The simplest option is often to pass the error to the client, and let your front end javascript deal with it. This means that your server can happily tick a long, passing out errors to be console logged by innocent front end developers.
@@ -99,3 +99,5 @@ This code is slightly more confusing than our synchronous function. It works tho
 ## further reading
 
 [https://www.joyent.com/node-js/production/design/errors](https://www.joyent.com/node-js/production/design/errors)
+
+[http://eloquentjavascript.net/08_error.html](http://eloquentjavascript.net/08_error.html)
